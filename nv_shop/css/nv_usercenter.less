@@ -1,0 +1,159 @@
+@import "common";
+body{
+    overflow-x: hidden;
+}
+#main{
+    margin-bottom:60px;
+    font-family: "宋体";
+    .cot{
+        padding-top:10px;
+        >div.lf{
+            width:123px;
+            padding:10px 20px 30px 20px;
+            border:1px solid #D0D0D0;
+            margin-right:17px;
+            >h3{
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            >ul{
+                li{
+                    line-height: 24px;
+                    cursor: pointer;
+                    >span{
+                        display: inline-block;
+                        width:2px;
+                        height:2px;
+                        background:@color-base;
+                        vertical-align: middle;
+                        margin:0 5px 0 8px;
+                        position: relative;
+                        top:-2px;
+                    }
+
+                }
+            }
+        }
+        >div.rt{
+            width:1010px;
+            >div.myOrder{
+                >ul{
+                    >li{
+                        float:left;
+                        font-size: 16px;
+                        line-height: 48px;
+                        padding:0 23px 0 23px;
+                        cursor: pointer;
+                        border-bottom: 2px solid transparent;
+                        text-align: center;
+                        &:after{
+                            content: "";
+                            float: right;
+                            width: 1px;
+                            height: 14px;
+                            background: #E8E8E8;
+                            position: relative;
+                            top: 16px;
+                            left:23px;
+                        }
+                        &.active{
+                            color:@color-base;
+                            border-color: @color-base;
+                        }
+                    }
+                }
+                >h6{
+                    width:100%;
+                    height:2px;
+                    background:#E8E8E8;
+                    position: relative;
+                    top:-2px;
+                    z-index: -1;
+                    margin-bottom: 20px;
+                }
+                >table{
+                    width:100%;
+                    border-collapse:collapse;
+                    td{
+                        text-align:center;
+                        vertical-align: middle;
+                    }
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        width: 80px;
+                        height: 400px;
+                        top: 180px;
+                        left: -150px;
+                        overflow: hidden;
+                        background-image: linear-gradient(to right,rgba(255,255,255,0.2) 0,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0.2) 100%);
+                        transform: skewX(-25deg);
+                    }
+                    &:hover::before{
+                        transition: left 2s;
+                        left: 1360px;
+                    }
+                    >thead{
+                        border:1px solid #E8E8E8;
+                        >tr{
+                            >td{
+                                height: 46px;
+                            }
+                        }
+                    }
+                    >tbody{
+                        border:1px solid #E8E8E8;
+                        >tr{
+                            &.tr_1{
+                                height:42px;
+                                background:#F5F5F5;
+                                >td{
+                                    >h3{
+                                        margin:0 10px 0 40px;
+                                        font-size: 15px;
+                                        line-height: 42px;
+                                    }
+                                    >p{
+                                        line-height: 42px;
+                                    }
+                                }
+                            }
+                            &.tr_2{
+                                >td{
+                                    height:128px;
+                                    >div{
+                                        >a{
+                                            >img{
+                                                margin-right:15px;
+                                                width:80px;
+                                            }
+                                            >p{
+                                                width:200px;
+                                                text-align: left;
+                                                line-height:20px;
+                                                height:80px;
+                                                overflow: hidden;
+                                                vertical-align: middle;
+                                                display:table-cell;
+                                            }
+                                        }
+                                    }
+                                    >a{
+                                        display:block;
+                                        line-height: 20px;
+                                    }
+                                    >button{
+                                        padding:5px 10px;
+                                        background:#fff;
+                                        border:1px solid #D0D0D0;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>女装商城_商品详情页——宋畅作品 仅作技术展示</title>
+    <meta name="description" content="女装商城——nv_shop 个人技术展示，无支付功能。" />
+    <link rel="icon" href="logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" href="css/nv_details.css"/>
+    <style>
+        .u-flyer{display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;z-index: 9999;}
+    </style>
+</head>
+<body ng-controller="parentCtrl">
+    <div id="head_box"></div>
+    <div id="main">
+        <div class="cot">
+            <!--产品介绍-->
+            <div class="product-intro clearfloat">
+                <!--左侧-预览包-->
+                <div class="preview-wrap lf">
+                    <!--预览-->
+                    <div class="preview" id="preview">
+                        <img src="img-details/nv_details-1.jpg"/>
+                        <!--标记-->
+                        <div class="mark" id="mark"></div>
+                        <!--遮罩层-->
+                        <div class="superMark" id="superMark"></div>
+                    </div>
+                    <!--大图展示-->
+                    <div class="big-preview" id="big-preview"></div>
+                    <!--规格列表-->
+                    <div class="spec-list" id="spec-list">
+                        <ul>
+                            <li class="active">
+                                <img src="img-details/nv_details_sma-1.jpg"/>
+                            </li>
+                            <li>
+                                <img src="img-details/nv_details_sma-2.jpg"/>
+                            </li>
+                            <li>
+                                <img src="img-details/nv_details_sma-3.jpg"/>
+                            </li>
+                            <li>
+                                <img src="img-details/nv_details_sma-4.jpg"/>
+                            </li>
+                            <li class="last">
+                                <img src="img-details/nv_details_sma-5.jpg"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--产品编号-->
+                    <div class="product-num">
+                        <p class="lf">商品编号：1656257167</p>
+                        <div class="rt">
+                            <b></b>
+                            关注商品
+                        </div>
+                        <div class="rt">
+                            <i></i>
+                            分享
+                        </div>
+                    </div>
+                </div>
+                <!--中间-项目信息包-->
+                <div class="itemInfo-wrap lf">
+                    <div class="pro_name">
+                        {{list.pname}}
+                    </div>
+                    <div class="news">
+                        会员专享专区买二送一，不计成本清仓低至79元，优惠等你来，仅限10.19-10.22！
+                    </div>
+                    <div class="price">
+                        <em>京东价：<span></span></em>
+                        <span>￥{{list.price | number:2}}</span>
+                        <a href="">(降价通知)</a>
+                        <div class="rt">
+                            累计评价
+                            <p>254</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="sel-address">
+                        <ul id="list1">
+                            <li id="summary-stock">
+                                <div class="dt">配送至：<span></span></div>
+                                <div class="dd">
+                                    <div id="store-selector">
+                                        <div class="text"><div></div><b></b></div>
+                                        <div onclick="$('#store-selector').removeClass('hover')" class="close"></div>
+                                    </div><!--store-selector end-->
+                                    <div id="store-prompt"><strong></strong></div><!--store-prompt end--->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+
+                    <!--<div class="sel-address">-->
+                        <!--<em class="lf">配送至：<span></span></em>-->
+                        <!--<div class="lf">-->
+                            <!--北京朝阳区三环以内<b></b>-->
+                            <!--<h6></h6>-->
+                            <!--<div>-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<p class="lf">有货，支持 货到付款免运费 </p>-->
+                    <!--</div>-->
+                    <div class="sel-color" id="sel-color">
+                        <em>选择颜色：<span></span></em>
+                        <span>炭灰色</span>
+                        <span>浅米杏</span>
+                    </div>
+                    <div class="sel-size" id="sel-size">
+                        <em>选择尺寸：<span></span></em>
+                        <span>XL</span>
+                        <span>L</span>
+                        <span>M</span>
+                        <span>S</span>
+                    </div>
+                    <div class="lous" id="lous">
+                        <em>白条分期：<span></span></em>
+                        <span>30天免息</span>
+                        <span>每月￥8.29元起</span>
+                    </div>
+                    <div class="sel-btn">
+                        <div class="lf">
+                            <input type="text" value="1"/><a class="plus">+</a><a class="minus">-</a>
+                        </div>
+                        <button id="add_cart" ng-click="add_cart()"></button>
+                        <button class="help5">加入帮5买购物车</button>
+                    </div>
+                    <div class="reminder">
+                        温馨提示：支持7天无理由退货
+                    </div>
+                </div>
+                <!--右侧-侧边栏-->
+                <div class="sidebar rt">
+                    <!--购物信息-->
+                    <div class="shop_info">
+                        <p><img src="img-details/shop_logo-1.jpg" alt=""/></p>
+                        <p class="shop_name">
+                            <a href="">茵曼官方旗舰店</a>
+                        </p>
+                        <p class="score">
+                            综合评分：<span>9.7</span>
+                        </p>
+                        <p class="score">
+                            细则评分：<span>9.78</span>
+                            <span>9.67</span>
+                            <span>9.90</span>
+                        </p>
+                        <p class="service_phone">
+                            客服：400-000-0000转102401
+                        </p>
+                        <p class="ask_help">
+                            <button></button>
+                            <input type="button"/>
+                        </p>
+                        <p class="shop">
+                            <a href="">进入店铺</a>
+                            <a href="">关注店铺</a>
+                        </p>
+                    </div>
+                    <!--看了又看-->
+                    <div class="look_see clearfloat">
+                        <p>看了又看<a href="nv_details.html?pid=1" class="rt"></a></p>
+                        <div>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-details/look-1.jpg"/>
+                                <p>￥219.00</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="nv_details.html?pid=3">
+                                <img src="img-details/look-2.jpg"/>
+                                <p>￥249.00</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="best_combination">
+                <h3><img src="img-details/group-title.jpg"/></h3>
+                <ul class="clearfloat">
+                    <li>
+                        <a href="nv_details.html?pid=4">
+                            <img src="img-details/group-1.jpg"/>
+                            <p>茵曼2015秋装简约净色 V领百搭长袖T恤上衣女</p>
+                            <div>￥179.00</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nv_details.html?pid=5">
+                            <img src="img-details/group-2.jpg"/>
+                            <p>茵曼2015秋装简约净色 V领百搭长袖T恤上衣女</p>
+                            <div>￥179.00</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nv_details.html?pid=16">
+                            <img src="img-details/group-3.jpg"/>
+                            <p>茵曼2015秋装简约净色 V领百搭长袖T恤上衣女</p>
+                            <div>￥179.00</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nv_details.html?pid=17">
+                            <img src="img-details/group-4.jpg"/>
+                            <p>茵曼2015秋装简约净色 V领百搭长袖T恤上衣女</p>
+                            <div>￥179.00</div>
+                        </a>
+                    </li>
+                    <li class="hide">
+                        <a href="nv_details.html?pid=8">
+                            <img src="img-details/group-5.jpg"/>
+                            <p>茵曼2015秋装简约净色 V领百搭长袖T恤上衣女</p>
+                            <div>￥179.00</div>
+                        </a>
+                    </li>
+                    <li class="last">
+                        <a href="nv_details.html?pid=19">
+                            <img src="img-details/group-6.jpg"/>
+                            <p>茵曼2015秋装简约净色 V领百搭长袖T恤上衣女</p>
+                            <div>￥179.00</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="product_details clearfloat">
+                <div class="details_lf lf">
+                    <div class="store_search">
+                        <p>店内搜索</p>
+                        <div>
+                            <p class="key_word">
+                                <em>关键词<span></span></em>：<input type="text"/>
+                            </p>
+                            <p class="price">
+                                <em>价格<span></span></em>：<input type="text"/>
+                                <span>到</span>
+                                <input type="text"/>
+                            </p>
+                            <p>
+                                <em></em><button></button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="look_see">
+                        <p>看了又看</p>
+                        <ul>
+                            <li>
+                                <a href="nv_details.html?pid=12">
+                                    <img src="img-details/look-3.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款长
+                                        袖针织衫针织开衫女毛衣外套春
+                                        秋冬</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=13">
+                                    <img src="img-details/look-4.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=1">
+                                    <img src="img-details/look-5.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=1">
+                                    <img src="img-details/look-6.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=1">
+                                    <img src="img-details/look-7.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=1">
+                                    <img src="img-details/hot-1.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=1">
+                                    <img src="img-details/hot-2.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=1">
+                                    <img src="img-details/hot-3.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=1">
+                                    <img src="img-details/hot-4.jpg"/>
+                                    <div>INMAN/茵曼清仓2015秋装新款双 排扣翻领开衫小西装西服女秋冬 外套</div>
+                                    <span>￥ 239.00</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="details_rt rt">
+                    <div class="details-tab" id="details-tab">
+                        <ul>
+                            <li class="hover" value="1">商品介绍</li>
+                            <li value="2">商品评价(<span>37</span>)</li>
+                            <li value="3">售后保障</li>
+                        </ul>
+                    </div>
+                    <div class="introduce" id="introduce">
+                        <ul>
+                            <li>
+                                商品名称:
+                                <span>茵曼2015秋装新款波点</span>
+                            </li>
+                            <li>
+                                商品编号:
+                                <span>1703941291</span>
+                            </li>
+                            <li>
+                                店铺:
+                                <span>茵曼官方旗舰店</span>
+                            </li>
+                            <li>
+                                上架时间:
+                                <span>2015-09-08 10:23:29</span>
+                            </li>
+                            <li>
+                                商品毛重:
+                                <span>230.00g</span>
+                            </li>
+                            <li>
+                                货号:
+                                <span>8533010176</span>
+                            </li>
+                            <li>
+                                尺码:
+                                <span>其它</span>
+                            </li>
+                            <li>
+                                衣长:
+                                <span>中长款</span>
+                            </li>
+                            <li>
+                                风格:
+                                <span>简约</span>
+                            </li>
+                            <li>
+                                厚度:
+                                <span>常规款</span>
+                            </li>
+                            <li>
+                                领型:
+                                <span>翻领</span>
+                            </li>
+                            <li>
+                                流行元素:
+                                <span>简约</span>
+                            </li>
+                            <li>
+                                版型:
+                                <span>直筒型</span>
+                            </li>
+                            <li>
+                                颜色:
+                                <span>其它</span>
+                            </li>
+                            <li>
+                                袖长:
+                                <span>长袖</span>
+                            </li>
+                            <li>
+                                衣门襟:
+                                <span>单排扣</span>
+                            </li>
+                            <li>
+                                适用年龄:
+                                <span>18-24周岁</span>
+                            </li>
+                            <li>
+                                商品名称:
+                                <span>茵曼2015秋装新款波点</span>
+                            </li>
+                            <li>
+                                商品名称:
+                                <span>茵曼2015秋装新款波点</span>
+                            </li>
+                            <li>
+                                商品名称:
+                                <span>茵曼2015秋装新款波点</span>
+                            </li>
+                            <li>
+                                商品名称:
+                                <span>茵曼2015秋装新款波点</span>
+                            </li>
+                            <li>
+                                商品名称:
+                                <span>茵曼2015秋装新款波点</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details_content" id="details_content">
+                        <img src="img-details/details-1.jpg"/>
+                    </div>
+                    <div class="promise" id="promise">
+                        <div>
+                            服务承诺：<br/>
+                            京东平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！
+                            注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能
+                            确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且
+                            保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+                        </div>
+                    </div>
+                    <div class="declare" id="declare">
+                        权利声明：<br/>
+                        京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。<br/>
+                        注：本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。<br/>
+                        印刷版次不同，印刷时间和版次以实物为准。
+                    </div>
+                    <div class="comment" id="comment">
+                        <div class="comment_list">
+                            <ul>
+                                <li>全部评价(<span>965</span>)</li>
+                                <li>好评(<span>965</span>)</li>
+                                <li>中评(<span>0</span>)</li>
+                                <li>差评(<span>0</span>)</li>
+                                <li>有图片的评价(<span>4</span>)</li>
+                            </ul>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td width="50%">评价心得</td>
+                                        <td>顾客满意度</td>
+                                        <td>购买信息</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                很喜欢，比想象中的好的多，质量不错。<br/>
+                                                大小合适 <br/>
+                                                <a href="">回复(0)</a>
+                                                <a href="">赞(0)</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            颜色：浅蓝<br/>型号：均码
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                很喜欢，比想象中的好的多，质量不错。<br/>
+                                                大小合适 <br/>
+                                                <a href="">回复(0)</a>
+                                                <a href="">赞(0)</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p></p>
+                                        </td>
+                                        <td>
+                                            颜色：浅蓝<br/>型号：均码
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="today_recommend cot">
+        <h2>
+            今日推荐
+        </h2>
+        <ul>
+            <li>
+                <a href="nv_details.html?pid=1">
+                    <img src="img-zw/zc-1.jpg" alt=""/>
+                    <div>
+                        <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                        <span>¥268.00</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="nv_details.html?pid=1">
+                    <img src="img-zw/zc-2.jpg" alt=""/>
+                    <div>
+                        <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                        <span>¥268.00</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="nv_details.html?pid=1">
+                    <img src="img-zw/zc-3.jpg" alt=""/>
+                    <div>
+                        <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                        <span>¥268.00</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="nv_details.html?pid=1">
+                    <img src="img-zw/zc-4.jpg" alt=""/>
+                    <div>
+                        <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                        <span>¥268.00</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="nv_details.html?pid=1">
+                    <img src="img-zw/zc-5.jpg" alt=""/>
+                    <div>
+                        <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                        <span>¥268.00</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="foot_help_box"></div>
+    <div id="foot_box"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.fly.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/common.js"></script>
+    <script src="nv_js/nv_details.js"></script>
+    <script src="js/location.js"></script>
+</body>
+</html>

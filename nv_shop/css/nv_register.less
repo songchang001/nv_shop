@@ -1,0 +1,109 @@
+@import "common";
+body{
+    background:#F2F2F2;
+}
+#top{
+    background:#fff;
+}
+#main{
+    margin-bottom:47px;
+    >.cot{
+        >div{
+            width:910px;
+            @media (min-width: @min-width){
+                width:1110px;
+            }
+            height:501px;
+            border:1px solid #E5E5E5;
+            margin:0 auto;
+            background:#fff;
+            padding:48px 88px 49px 0;
+            font-size: 14px;
+            font-family:"宋体";
+            >div.lf{
+                a{
+                    color:#005AA0;
+                }
+                >form{
+                    >div.form-item{
+                        height:38px;
+                        line-height: 38px;
+                        margin-bottom: 27px;
+                        >label{
+                            float:left;
+                            width:250px;
+                            height:38px;
+                            padding-right:10px;
+                            text-align:right;
+                            >span{
+                                color:#f00;
+                            }
+                        }
+                        >input{
+                            width:318px;
+                            height:36px;
+                            border:1px solid #CCCCCC;
+                            &#phoneCode,&#authCode{
+                                width:131px;
+                            }
+                            &#phoneCode_btn{
+                                width:101px;
+                                height:36px;
+                                cursor: pointer;
+                            }
+                            &#u_name{
+                                background:url(../img/iconlist-2.png) no-repeat 298px -472px;
+                            }
+                            &#u_pwd,&#u_pwd_confirm{
+                                background:url(../img/iconlist-2.png) no-repeat 299px -514px;
+                            }
+                            &#u_phone{
+                                background:url(../img/iconlist-2.png) no-repeat 301px -555px;
+                            }
+                        }
+                        >span{
+                            position:relative;
+                            font-size:12px;
+                            left:270px;
+                            top:-8px;
+                            font-weight: 800;
+                            color:#D9D8D8;
+                            display: none;
+                            &.err{
+                                color:#e4393c;
+                            }
+                            &.succ{
+                                color:#007D00;
+                            }
+                        }
+                        em{
+                            font-style: normal;
+                            font-size:12px;
+                            color:#999;
+                        }
+                        >button{
+                            width:270px;
+                            height:36px;
+                            color:#fff;
+                            background:#e74447;
+                            border-radius: 3px;
+                            font-size:16px;
+                            cursor: pointer;
+                            &.disabled{
+                                background: #ccc;
+                                cursor: default;
+                            }
+                        }
+
+                    }
+                    >div{
+                        >h6{
+                            display: inline;
+                            height:16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

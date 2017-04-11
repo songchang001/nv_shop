@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>女装商城_商品列表——宋畅作品 仅作技术展示</title>
+    <meta name="description" content="女装商城——nv_shop 个人技术展示，无支付功能。" />
+    <link rel="icon" href="logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/nv_productList.css"/>
+</head>
+<body ng-controller="parentCtrl">
+    <div id="head_box"></div>
+    <div id="main">
+        <div class="cot">
+            <div class="selector" id="selector">
+                <div class="sel_1" id="sel_1">
+                    <h3 class="lf">
+                        选购热点
+                    </h3>
+                    <div class="lf">
+                        <ul>
+                            <li>修身显瘦</li>
+                            <li>加肥加大</li>
+                            <li>民族风</li>
+                            <li>欧美时尚</li>
+                            <li>可爱</li>
+                            <li>条纹</li>
+                            <li>纯棉</li>
+                            <li>修身显瘦</li>
+                            <li>加肥加大</li>
+                            <li>民族风</li>
+                            <li>欧美时尚</li>
+                            <li>可爱</li>
+                            <li>条纹</li>
+                            <li>纯棉</li>
+                            <li>修身显瘦</li>
+                            <li>加肥加大</li>
+                            <li>民族风</li>
+                            <li>欧美时尚</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sel_2" id="sel_2">
+                    <h3 class="lf">衬衫</h3>
+                    <div class="lf">
+                        <ul>
+                            <li><span>百搭衬衫</span>(10078)</li>
+                            <li><span>长袖衬衫</span>(10078)</li>
+                            <li><span>白衬衫</span>(10078)</li>
+                            <li><span>棉麻衬衫</span>(10078)</li>
+                            <li><span>长款衬衫</span>(10078)</li>
+                            <li><span>格子衬衫</span>(10078)</li>
+                            <li><span>短袖衬衫</span>(10078)</li>
+                            <li><span>常规款衬衫</span>(10078)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sel_3" id="sel_3">
+                    <div class="sel_3_1">
+                        <h3 class="lf">其他分类</h3>
+                        <div>
+                            <ul>
+                                <li>雪纺衫(3043)</li>
+                                <li>中老年女装(3043)</li>
+                                <li>大码女装(3043)</li>
+                                <li>时尚连衣裙(3043)</li>
+                                <li>时尚套装(3043)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sel_3_2">
+                        <h3 class="lf">材质</h3>
+                        <div>
+                            <ul>
+                                <li>棉</li>
+                                <li>蚕丝</li>
+                                <li>麻</li>
+                                <li>涤纶</li>
+                                <li>粘胶</li>
+                                <li>绵纶</li>
+                                <li>醋纤</li>
+                                <li>LYCRA莱卡</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sel_3_2">
+                        <h3 class="lf">风格</h3>
+                        <div>
+                            <ul>
+                                <li>学院</li>
+                                <li>文艺</li>
+                                <li>甜美</li>
+                                <li>欧美</li>
+                                <li>通勤</li>
+                                <li>民族</li>
+                                <li>田园</li>
+                                <li>街头</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sel_3_2">
+                        <h3 class="lf">图案</h3>
+                        <div>
+                            <ul>
+                                <li>纯色</li>
+                                <li>碎花</li>
+                                <li>圆点</li>
+                                <li>条纹</li>
+                                <li>其他</li>
+                                <li>花色</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product_list">
+                <div class="p_filter clearfloat">
+                    <div class="sort lf" id="sort">
+                        <ul>
+                            <li class="active">综合</li>
+                            <li>人气</li>
+                            <li>新品</li>
+                            <li>销量</li>
+                            <li>价格</li>
+                        </ul>
+                    </div>
+                    <div class="address lf">
+                        收货地：<span>广州</span>
+                    </div>
+                    <div class="feature lf">
+                        <label>
+                            <input type="checkbox"/>
+                            新到商品
+                        </label>
+                        <label>
+                            <input type="checkbox"/>
+                            包邮
+                        </label>
+                        <label>
+                            <input type="checkbox"/>
+                            折扣
+                        </label>
+                    </div>
+                </div>
+                <div class="p_list">
+                    <ul>
+                        <li ng-repeat="list in data.data">
+                            <a href="nv_details.html?pid={{list.pid}}">
+                                <img ng-src={{"img-productList/"+list.pic}} />
+                                <p><img ng-src={{"img-productList/"+list.pic_s}} /></p>
+                                <h3>{{list.price}}</h3>
+                                <h4>{{list.pname}}</h4>
+                            </a>
+                            <div>
+                                <span class="lf">
+                                    月成交
+                                    <span>1.3万笔</span>
+                                </span>
+                                <span>
+                                    评价
+                                    <em>9235</em>
+                                </span>
+                                <a href="" class="rt"></a>
+                            </div>
+                        </li>
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-2.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-2.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-3.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-3.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-4.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-4.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-5.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-5.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-6.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-6.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-7.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-7.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-8.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-8.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-9.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-9.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-10.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-10.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-1.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-1.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-2.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-2.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-3.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-3.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-4.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-4.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-5.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-5.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-6.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-6.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-7.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-7.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-8.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-8.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-9.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-9.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-10.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-10.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-1.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-1.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-2.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-2.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-3.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-3.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-4.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-4.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-5.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-5.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-6.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-6.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-7.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-7.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-8.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-8.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-9.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-9.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">-->
+                                <!--<img src="img-productList/prodoctList_l_-10.jpg"/>-->
+                                <!--<p><img src="img-productList/prodoctList_s-10.jpg"/></p>-->
+                                <!--<h3>￥88.00</h3>-->
+                                <!--<h4>米克伦牛仔衬衫女韩版长袖</h4>-->
+                            <!--</a>-->
+                            <!--<div>-->
+                                <!--<span class="lf">-->
+                                    <!--月成交-->
+                                    <!--<span>1.3万笔</span>-->
+                                <!--</span>-->
+                                <!--<span>-->
+                                    <!--评价-->
+                                    <!--<em>9235</em>-->
+                                <!--</span>-->
+                                <!--<a href="#" class="rt"></a>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <div class="page">
+                    <a class="curr {{data.pageNum==1?'disabled':''}}"  ng-disabled="data.pageNum==1?true:false" ng-click="getList(data.pageNum-1)">《 上一页</a><a ng-click="getList(page)" class="{{page==data.pageNum?'curr':''}}" ng-repeat="page in pageArray">{{page}}</a><a class="curr {{data.pageNum>=data.pageCount?'disabled':''}}"  ng-click="getList(data.pageNum+1)">下一页 》</a>
+                    共{{data.pageCount}}页，到第
+                    <input type="text" ng-model="pageNum"/>
+                    页
+                    <button ng-click="getList(pageNum)">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="foot_help_box"></div>
+    <div id="foot_box"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/common.js"></script>
+    <script src="nv_js/nv_productList.js"></script>
+</body>
+</html>

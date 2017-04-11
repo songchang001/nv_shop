@@ -1,0 +1,657 @@
+/*通用*/
+body {
+  font: 12px "Microsoft Yahei";
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+a {
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  color: #ff6700;
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+img {
+  vertical-align: bottom;
+  border: 0;
+}
+input {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 5px;
+}
+button {
+  border: 0;
+  outline: 0;
+  font-family: "Microsoft Yahei";
+  margin: 0;
+  padding: 0;
+}
+.lf {
+  float: left;
+}
+.rt {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.overflow {
+  overflow: hidden;
+}
+.clearfloat:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.margintop:before {
+  content: "";
+  display: table;
+}
+.border_right0 {
+  border-right: 0;
+}
+.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+.cot {
+  width: 1000px;
+  margin: 0 auto;
+}
+@media (min-width: 1220px) {
+  .cot {
+    width: 1200px;
+  }
+}
+.prompt {
+  transform: translatey(-4px);
+  -moz-transform: translatey(-4px);
+  -webkit-transform: translatey(-4px);
+  -o-transform: translatey(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+/*顶部-top部分*/
+/*函数*/
+#top {
+  width: 100%;
+  height: 30px;
+  background: #efefee;
+  line-height: 30px;
+}
+#top > .cot div.lf > div > a > i {
+  background: url(../img/iconlist-1.png) no-repeat;
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+#top > .cot div.lf > div a:hover i {
+  background-position: 0 -35px;
+}
+#top > .cot > #head_login > a {
+  cursor: pointer;
+}
+#top > .cot ul > li {
+  float: left;
+  margin-left: 13px;
+  padding: 0 5px;
+  position: relative;
+}
+@media (min-width: 1220px) {
+  #top > .cot ul > li {
+    margin-left: 23px;
+  }
+}
+#top > .cot ul > li.has_box:hover {
+  background: #E4DB92;
+}
+#top > .cot ul > li.has_box:hover > div {
+  display: block;
+}
+#top > .cot ul > li > a > i {
+  background: url(../img/iconlist-1.png) no-repeat;
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+#top > .cot ul > li a:hover i {
+  background-position: 0 -35px;
+}
+#top > .cot ul > li a > span {
+  background: url(../img/iconlist-1.png) no-repeat 0 -76px;
+  display: inline-block;
+  width: 11px;
+  height: 19px;
+  vertical-align: middle;
+  margin-right: 3px;
+  margin-bottom: 3px;
+}
+#top > .cot ul > li div {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  background: #E4DB92;
+  top: 30px;
+  left: 0px;
+  display: none;
+  z-index: 100;
+}
+/*头部-head部分*/
+#header {
+  height: 100px;
+}
+#header .cot h1 {
+  margin: 15px 0 0 45px;
+}
+#header .cot .search {
+  margin: 22px 0 0 110px;
+}
+@media (min-width: 1220px) {
+  #header .cot .search {
+    margin: 22px 0 0 150px;
+  }
+}
+#header .cot .search div {
+  width: 427px;
+  height: 39px;
+  background: #D03A7B;
+}
+#header .cot .search div input {
+  width: 333px;
+  height: 15px;
+  font-size: 15px;
+  margin: 2px 0 0 2px;
+  padding: 10px 10px;
+  vertical-align: top;
+  box-sizing: content-box;
+}
+#header .cot .search div button {
+  width: 72px;
+  height: 35px;
+  margin: 2px 0 0 0;
+  background: #D03A7B;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+}
+#header .cot .search p {
+  line-height: 30px;
+}
+#header .cot .search p a {
+  margin: 0 15px 0 3px;
+}
+#header .cot .shoppingCart {
+  width: 183px;
+  height: 45px;
+  line-height: 45px;
+  color: #D03A7B;
+  border: 2px solid #D03A7B;
+  font-size: 16px;
+  margin-top: 27px;
+  cursor: pointer;
+  position: relative;
+}
+#header .cot .shoppingCart:hover {
+  background: #F2D7E2;
+}
+#header .cot .shoppingCart i {
+  display: inline-block;
+  width: 29px;
+  height: 28px;
+  background: url(../img/iconlist-1.png) no-repeat 0 -154px;
+  margin: 0 12px 7px 11px;
+  vertical-align: bottom;
+}
+#header .cot .shoppingCart b {
+  display: inline-block;
+  width: 9px;
+  height: 15px;
+  background: url(../img/iconlist-1.png) no-repeat 0 -119px;
+  margin: 0 0 15px 18px;
+  vertical-align: bottom;
+}
+#header .cot .shoppingCart span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #D03A7B;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  line-height: 24px;
+  text-align: center;
+  position: absolute;
+  top: -15px;
+  left: 132px;
+  background: #fff;
+}
+/*登录、注册头部*/
+.login_head {
+  padding: 10px 0 38px 0;
+  height: 126px;
+  line-height: 126px;
+  cursor: pointer;
+}
+.login_head > img {
+  vertical-align: middle;
+}
+.login_head > b {
+  display: inline-block;
+  width: 1px;
+  height: 68px;
+  background: #D2D2D2;
+  vertical-align: middle;
+  margin: 0 22px 0 19px;
+}
+.login_head > span {
+  font-size: 24px;
+  position: relative;
+  top: 10px;
+}
+/*导航-nav部分*/
+#nav {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 2px solid #377D0D;
+}
+#nav .cot .classification {
+  text-align: center;
+  position: relative;
+}
+#nav .cot .classification > a {
+  display: inline-block;
+  font-size: 14px;
+  color: #fff;
+  background: #D03A7B;
+  width: 210px;
+}
+#nav .cot .classification:hover .class_box {
+  display: block;
+}
+#nav .cot .classification .class_box {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 44px;
+}
+#nav .cot .classification .class_box > ul > li {
+  width: 210px;
+  height: 36px;
+  line-height: 36px;
+  background: #E671A5;
+  text-align: left;
+}
+#nav .cot .classification .class_box > ul > li:hover {
+  background: #E694CA;
+}
+#nav .cot .classification .class_box > ul > li:hover > div {
+  display: block;
+}
+#nav .cot .classification .class_box > ul > li span {
+  margin: 0 6px 0 8px;
+}
+#nav .cot .classification .class_box > ul > li a {
+  font-size: 14px;
+  color: #fff;
+  margin-right: 12px;
+}
+#nav .cot .classification .class_box > ul > li a:hover {
+  color: #fff499;
+}
+#nav .cot .classification .class_box > ul > li i {
+  display: inline-block;
+  width: 6px;
+  height: 10px;
+  background: url(../img/iconlist-1.png) no-repeat 0 -215px;
+  position: relative;
+  right: 6px;
+}
+#nav .cot .classification .class_box > ul > li > div {
+  width: 500px;
+  height: 467px;
+  position: absolute;
+  top: 0px;
+  left: 210px;
+  background: #fff;
+  display: none;
+  z-index: 20;
+}
+#nav .cot > ul > li {
+  float: left;
+}
+#nav .cot > ul > li > a {
+  display: block;
+  padding: 0 20px;
+  line-height: 44px;
+  font-size: 16px;
+}
+/*底部-foot_help部分*/
+#foot_help {
+  margin-bottom: 54px;
+  overflow: hidden;
+}
+#foot_help .cot ul > li {
+  float: left;
+  width: 250px;
+}
+@media (min-width: 1220px) {
+  #foot_help .cot ul > li {
+    width: 300px;
+  }
+}
+#foot_help .cot ul > li > a {
+  display: inline-block;
+  height: 75px;
+  color: #373737;
+  padding: 2px 0 0 105px;
+  background: url(../img/iconlist-1.png) no-repeat 25px -846px;
+}
+#foot_help .cot ul > li > a > div {
+  font-size: 18px;
+}
+@media (min-width: 1220px) {
+  #foot_help .cot ul > li > a > div {
+    font-size: 24px;
+  }
+}
+#foot_help .cot ul > li > a > p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+@media (min-width: 1220px) {
+  #foot_help .cot ul > li > a > p {
+    font-size: 16px;
+  }
+}
+#foot_help .cot ul > li > a:hover > div {
+  color: #ff6700;
+}
+#foot_help .cot ul > li > a.qi {
+  background-position: 25px -1012px;
+}
+#foot_help .cot ul > li > a.te {
+  background-position: 25px -1162px;
+}
+#foot_help .cot ul > li > a.bang {
+  background-position: 25px -1345px;
+}
+#foot_help .cot ul > li > b {
+  display: inline-block;
+  height: 75px;
+  width: 2px;
+  background: #DCDCDC;
+  vertical-align: bottom;
+  float: right;
+  position: relative;
+  top: -6px;
+}
+/*最底部-footer部分*/
+#footer {
+  background: #F4F3F3;
+  padding: 50px 0;
+  overflow: hidden;
+}
+#footer .cot > div.lf {
+  text-align: center;
+  width: 200px;
+}
+@media (min-width: 1220px) {
+  #footer .cot > div.lf {
+    width: 240px;
+  }
+}
+#footer .cot > div.lf > p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+#footer .cot > div.lf > ul > li a {
+  display: block;
+  font-size: 14px;
+  line-height: 35px;
+}
+/*简化版最底部——foot_box_sim*/
+#footer_sim .cot {
+  text-align: center;
+}
+#footer_sim .cot > div {
+  margin-bottom: 16px;
+}
+#footer_sim .cot > div > b {
+  display: inline-block;
+  height: 12px;
+  width: 1px;
+  background: #858585;
+  margin: 0 15px;
+  position: relative;
+  top: 2px;
+}
+/*今日推荐*/
+.today_recommend {
+  overflow: hidden;
+}
+.today_recommend > h2 {
+  font-size: 24px;
+  font-family: "微软雅黑";
+  border-bottom: 2px solid #8CBB3C;
+  line-height: 40px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+.today_recommend ul > li {
+  background: #F1F0F0;
+  margin-bottom: 44px;
+  float: left;
+  width: 195px;
+  margin-right: 5px;
+}
+.today_recommend ul > li:hover {
+  transform: translatey(-4px);
+  -moz-transform: translatey(-4px);
+  -webkit-transform: translatey(-4px);
+  -o-transform: translatey(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+@media (min-width: 1220px) {
+  .today_recommend ul > li {
+    width: 235px;
+  }
+}
+.today_recommend ul > li > a > img {
+  width: 100%;
+}
+.today_recommend ul > li > a > div > p {
+  color: #403f3f;
+  font-size: 14px;
+  line-height: 23px;
+  padding: 0 15px;
+  margin-top: 5px;
+}
+.today_recommend ul > li > a > div > p:hover {
+  color: #ff6700;
+}
+.today_recommend ul > li > a > div > span {
+  display: inline-block;
+  color: #e00;
+  font-size: 16px;
+  padding: 10px 0 9px 15px;
+}
+body {
+  overflow-x: hidden;
+}
+#main {
+  margin-bottom: 60px;
+  font-family: "宋体";
+}
+#main .cot {
+  padding-top: 10px;
+}
+#main .cot > div.lf {
+  width: 123px;
+  padding: 10px 20px 30px 20px;
+  border: 1px solid #D0D0D0;
+  margin-right: 17px;
+}
+#main .cot > div.lf > h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#main .cot > div.lf > ul li {
+  line-height: 24px;
+  cursor: pointer;
+}
+#main .cot > div.lf > ul li > span {
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  background: #D03A7B;
+  vertical-align: middle;
+  margin: 0 5px 0 8px;
+  position: relative;
+  top: -2px;
+}
+#main .cot > div.rt {
+  width: 1010px;
+}
+#main .cot > div.rt > div.myOrder > ul > li {
+  float: left;
+  font-size: 16px;
+  line-height: 48px;
+  padding: 0 23px 0 23px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  text-align: center;
+}
+#main .cot > div.rt > div.myOrder > ul > li:after {
+  content: "";
+  float: right;
+  width: 1px;
+  height: 14px;
+  background: #E8E8E8;
+  position: relative;
+  top: 16px;
+  left: 23px;
+}
+#main .cot > div.rt > div.myOrder > ul > li.active {
+  color: #D03A7B;
+  border-color: #D03A7B;
+}
+#main .cot > div.rt > div.myOrder > h6 {
+  width: 100%;
+  height: 2px;
+  background: #E8E8E8;
+  position: relative;
+  top: -2px;
+  z-index: -1;
+  margin-bottom: 20px;
+}
+#main .cot > div.rt > div.myOrder > table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#main .cot > div.rt > div.myOrder > table td {
+  text-align: center;
+  vertical-align: middle;
+}
+#main .cot > div.rt > div.myOrder > table:before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 400px;
+  top: 180px;
+  left: -150px;
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.2) 100%);
+  transform: skewX(-25deg);
+}
+#main .cot > div.rt > div.myOrder > table:hover::before {
+  transition: left 2s;
+  left: 1360px;
+}
+#main .cot > div.rt > div.myOrder > table > thead {
+  border: 1px solid #E8E8E8;
+}
+#main .cot > div.rt > div.myOrder > table > thead > tr > td {
+  height: 46px;
+}
+#main .cot > div.rt > div.myOrder > table > tbody {
+  border: 1px solid #E8E8E8;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_1 {
+  height: 42px;
+  background: #F5F5F5;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_1 > td > h3 {
+  margin: 0 10px 0 40px;
+  font-size: 15px;
+  line-height: 42px;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_1 > td > p {
+  line-height: 42px;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_2 > td {
+  height: 128px;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_2 > td > div > a > img {
+  margin-right: 15px;
+  width: 80px;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_2 > td > div > a > p {
+  width: 200px;
+  text-align: left;
+  line-height: 20px;
+  height: 80px;
+  overflow: hidden;
+  vertical-align: middle;
+  display: table-cell;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_2 > td > a {
+  display: block;
+  line-height: 20px;
+}
+#main .cot > div.rt > div.myOrder > table > tbody > tr.tr_2 > td > button {
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #D0D0D0;
+}

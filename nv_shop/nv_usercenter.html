@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>女装商城_个人中心——宋畅作品 仅作技术展示</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon"/>
+    <meta name="description" content="女装商城——nv_shop 个人技术展示，无支付功能。" />
+    <link rel="icon" href="logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/nv_usercenter.css"/>
+</head>
+<body ng-controller="parentCtrl">
+<div id="head_box"></div>
+<div id="main">
+    <div class="cot clearfloat">
+        <div class="lf">
+            <h3>账户管理</h3>
+            <ul>
+                <li class="active"><span></span>我的订单</li>
+                <li><span></span>占位</li>
+                <li><span></span>占位</li>
+                <li><span></span>占位</li>
+                <li><span></span>占位</li>
+                <li><span></span>占位</li>
+            </ul>
+        </div>
+        <div class="rt">
+            <div class="myOrder">
+                <ul class="order-tab clearfloat">
+                    <li class="active">所有订单</li>
+                    <li>待收货</li>
+                    <li>待评价</li>
+                    <li>分阶段</li>
+                </ul>
+                <h6></h6>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>宝贝</td>
+                            <td>单价（元）</td>
+                            <td>数量</td>
+                            <td>商品操作</td>
+                            <td>实付款</td>
+                            <td>交易状态</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="list in data">
+                        <tr class="tr_1">
+                            <td colspan="7">
+                                <h3 class="lf" ng-bind="'订单号：'+list.oid"></h3>
+                                <p class="lf" ng-bind="list.orderTime | date:'yyyy-MM-dd HH:mm:ss'" ></p>
+                            </td>
+                        </tr>
+                        <tr class="tr_2">
+                            <td>
+                                <div>
+                                    <a href="nv_details.html" class="clearfloat">
+                                        <img  ng-src={{"img-productList/"+list.pic_s}} />
+                                        <p ng-bind="list.pname"></p>
+                                    </a>
+                                </div>
+                            </td>
+                            <td ng-bind="list.price | number:2">
+
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                <a href="">申请售后</a>
+                                <a href="">投诉卖家</a><br/>
+                            </td>
+                            <td>
+                                <span>24.38</span><br/>
+                                (含运费：0.00)
+                            </td>
+                            <td>
+                                <a>交易成功</a>
+                                <a href="">订单详情</a>
+                                <a href="">查看物流</a>
+                            </td>
+                            <td>
+                                <button>评价</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="foot_help_box"></div>
+<div id="foot_box_sim"></div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/common.js"></script>
+<script src="nv_js/nv_usercenter.js"></script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8"/>
+        <title>女装商城——宋畅作品 仅作技术展示</title>
+        <meta name="description" content="女装商城——nv_shop 个人技术展示，无支付功能。" />
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/nvshop.css">
+        <link rel="icon" href="logo.ico" type="image/x-icon"/>
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body ng-controller="parentCtrl">
+        <div id="head_box"></div>
+        <div id="banner">
+            <div id="carousel-example-generic" class="carousel slide" data-interval="3000" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" ng-class="$index==0?'active':''" ng-repeat="img in imgArray" data-slide-to="{{$index}}"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item" ng-class="$index==0?'active':''" ng-repeat="img in imgArray">
+                        <a href={{"nv_details.html?pid="+($index+5)}} style="background:url({{img}}) center center"></a>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" data-target="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" data-target="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="cot">
+                <div class="bulletin">
+                    <h3>APAN快报 <a href=""><span class="rt">更多</span></a></h3>
+                    <p><a href="">[特惠]【全球购】疯狂抢购德国爆品</a></p>
+                    <p><a href="">[公告]2015年网友见面会即将启动</a></p>
+                    <p><a href="">[特惠]12道锋味 美食1.2元疯抢</a></p>
+                    <p><a href="">[公告]自营家电3030180服务继续执行</a></p>
+                </div>
+                <div class="service">
+                    <h3>女装服务</h3>
+                    <ul>
+                        <li>
+                            <a href="nv_productList.html?keyword=裙子">
+                                <i></i>
+                                <p>裙子</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_productList.html?keyword=牛仔">
+                                <i class="niuzai"></i>
+                                <p>牛仔</p>
+                            </a>
+                        </li>
+                        <li class="border_right0">
+                            <a href="nv_productList.html?keyword=礼服">
+                                <i class="lifu"></i>
+                                <p>礼服</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_productList.html?keyword=衬衫">
+                                <i class="chenshan"></i>
+                                <p>衬衫</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_productList.html?keyword=内衣">
+                                <i class="neiyi"></i>
+                                <p>内衣</p>
+                            </a>
+                        </li>
+                        <li class="border_right0">
+                            <a href="nv_productList.html?keyword=睡衣">
+                                <i class="shuiyi"></i>
+                                <p>睡衣</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="cot">
+                <!--一楼-今日推荐-->
+                <div class="f1_recommend">
+                    <ul>
+                        <li><a href="nv_productList.html?keyword=口"><img src="img-zw/tj-1.jpg"/></a></li>
+                        <li><a href="nv_details.html?pid=2"><img src="img-zw/tj-2.jpg"/></a></li>
+                        <li><a href="nv_details.html?pid=3"><img src="img-zw/tj-3.jpg"/></a></li>
+                        <li><a href="nv_details.html?pid=4"><img src="img-zw/tj-4.jpg"/></a></li>
+                        <li><a href="nv_details.html?pid=5"><img src="img-zw/tj-5.jpg"/></a></li>
+                    </ul>
+                </div>
+                <!--二楼-猜你喜欢-->
+                <div class="f2_love">
+                    <h2></h2>
+                    <ul>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/gue-1.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/gue-2.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/gue-3.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/gue-4.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/gue-5.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/gue-6.jpg"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--三楼-分类-->
+                <div class="f3_class clearfloat">
+                    <h2>
+                        <img src="img-zw/lan-1.jpg" alt=""/>
+                    </h2>
+                    <ul class="clearfloat">
+                        <li>
+                            <a href="nv_details.html?pid=2"><img src="img-zw/pp-1.jpg"/></a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2"><img src="img-zw/pp-2.jpg"/></a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2"><img src="img-zw/pp-3.jpg"/></a>
+                        </li>
+                        <li class="last_li">
+                            <a href="nv_details.html?pid=2"><img src="img-zw/pp-4.jpg"/></a>
+                        </li>
+                    </ul>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-1.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-2.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-3.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-4.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-5.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-6.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-7.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-8.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-9.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-10.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-11.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nv_details.html?pid=2">
+                                    <img src="img-zw/sam-12.jpg" class="lf"/>
+                                    <div class="lf">
+                                        <h4>秋冬新品</h4>
+                                        <p>标记我的时尚品味</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--四楼-风格指南-->
+                <div class="f4_style clearfloat">
+                    <h2></h2>
+                    <div class="lf">
+                        <div>
+                            <a href="nv_productList.html?keyword=裙子">碎花连衣裙</a>
+                            <a href="nv_productList.html?keyword=裙子">棉麻印花裙</a>
+                            <a href="nv_productList.html?keyword=衬衫">气质衬衫</a>
+                            <a href="nv_productList.html?keyword=裙子">套装裙</a>
+                            <a href="nv_productList.html?keyword=上衣">T恤</a>
+                            <a href="nv_productList.html?keyword=冬">商场同款</a>
+                            <a href="nv_productList.html?keyword=衬衫">打底衫</a>
+                        </div>
+                        <a href="nv_details.html?pid=2"><img src="img-zw/sty-1.jpg" alt=""/></a>
+                    </div>
+                    <a href="nv_details.html?pid=2" class="lf">
+                        <img src="img-zw/sty-2.jpg" alt=""/>
+                    </a>
+                    <ul class="rt">
+                        <li class="hidde">
+                            <a href="nv_details.html?pid=2"><img src="img-zw/sty-3.jpg" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2"><img src="img-zw/sty-4.jpg" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2"><img src="img-zw/sty-5.jpg" alt=""/></a>
+                        </li>
+                        <li class="hidde">
+                            <a href="nv_details.html?pid=2"><img src="img-zw/sty-6.jpg" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2"><img src="img-zw/sty-7.jpg" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2"><img src="img-zw/sty-8.jpg" alt=""/></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--五楼-双11预售-->
+                <div class="f5_pre_sale">
+                    <h2>
+                        <img src="img-zw/lan-2.jpg" alt=""/>
+                    </h2>
+                    <ul>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-1.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-2.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-3.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-4.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-5.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-6.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-7.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-8.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-9.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="nv_details.html?pid=2">
+                                <img src="img-zw/zc-10.jpg" alt=""/>
+                                <div>
+                                    <p>100%纯羊毛外搭针织秋季纯色 翻领毛衣</p>
+                                    <span>¥268.00</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="foot_help_box"></div>
+        <div id="foot_box"></div>
+        <script src="js/jquery-1.11.3.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-sanitize.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/nvshop.js"></script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>女装商城_登陆页面——宋畅作品 仅作技术展示</title>
+    <meta name="description" content="女装商城——nv_shop 个人技术展示，无支付功能。" />
+    <link rel="icon" href="logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+    <div id="login_head" class="cot">
+        <img src="img/logo.gif"/>
+        <b></b>
+        <span>欢迎登陆</span>
+    </div>
+    <div id="main">
+        <div class="cot">
+            <div>
+                <h3>
+                    APNA会员
+                    <a href="nv_register.html" class="rt">立即注册</a>
+                </h3>
+                <p>公共场所不建议自动登录，以防账号丢失</p>
+                <div class="u_name">
+                    <span></span><input type="text" value="admin" placeholder="邮箱/用户名/已验证手机" id="uname" name="uname"/>
+                    <p>用户名不能为空</p>
+                </div>
+                <div class="u_pwd">
+                    <span></span><input type="password" value="admin" placeholder="密码" id="upwd" name="upwd"/>
+                    <p>密码不能为空</p>
+                </div>
+                <div class="u_sel">
+                    <label>
+                        <input type="checkbox" id="automatic"/>
+                        自动登录
+                    </label>
+                    <label>
+                        <input type="checkbox"/>
+                        安全控件登录
+                    </label>
+                    <a href="" class="rt">忘记密码?</a>
+                </div>
+                <div class="u_btn">
+                    <button id="btn-login">登录</button>
+                    <p id="login-result">用户名或密码错误，请重新输入</p>
+                </div>
+                <div class="other_login">
+                    <div class="lf">
+                        使用合作网站账号登录APNA：<br/>
+                        <a href="">APNA钱包</a>
+                        <b></b>
+                        <a href="">QQ</a>
+                        <b></b>
+                        <a href="">微信</a>
+                    </div>
+                    <h6 class="rt"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="foot_help_box"></div>
+    <div id="foot_box_sim"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/common.js"></script>
+    <script src="nv_js/login.js"></script>
+</body>
+</html>

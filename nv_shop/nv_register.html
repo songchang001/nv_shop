@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>女装商城_注册页——宋畅作品 仅作技术展示</title>
+    <meta name="description" content="女装商城——nv_shop 个人技术展示，无支付功能。" />
+    <link rel="icon" href="logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/nv_register.css"/>
+</head>
+<body>
+    <div id="top">
+        <div class="cot">
+            <div class="lf">送至：
+                <div class="rt"><a href="">北京 <i></i></a></div>
+            </div>
+            <ul class="rt">
+                <li><a href="nv_usercenter.html">我的订单</a></li>
+                <li class="has_box">
+                    <a href="">我的APNA <i></i></a>
+                    <div>
+
+                    </div>
+                </li>
+                <li><a href="">APNA会员</a></li>
+                <li><a href="">企业采购</a></li>
+                <li class="has_box">
+                    <a href=""><span></span>手机APNA <i></i></a>
+                    <div></div>
+                </li>
+                <li class="has_box">
+                    <a href="">关注APNA <i></i></a>
+                    <div></div>
+                </li>
+                <li class="has_box">
+                    <a href="">客户服务 <i></i></a>
+                    <div></div>
+                </li>
+                <li class="has_box">
+                    <a href="">网站导航 <i></i></a>
+                    <div></div>
+                </li>
+            </ul>
+            <div class="rt" id="head_login">
+                <a href="login.html">你好，请登录</a>
+                &nbsp;
+                &nbsp;
+                <a href="nv_register.html">免费注册</a>
+            </div>
+        </div>
+    </div>
+    <div id="login_head" class="cot login_head">
+        <img src="img/logo.gif"/>
+        <b></b>
+        <span>欢迎注册</span>
+    </div>
+    <div id="main">
+        <div class="cot">
+            <div>
+                <div class="lf">
+                    <form action="" id="register">
+                        <div class="form-item">
+                            <label for="u_name"><span>*</span>用户名：</label>
+                            <input type="text" id="u_name" name="u_name" placeholder="您的账户名和登录名"/>
+                            <br/>
+                            <span>支持中文、字母、数字、“-”“_”的组合，4-20个字符"</span>
+                        </div>
+                        <div class="form-item">
+                            <label for="u_pwd"><span>*</span>请设置密码：</label>
+                            <input type="text" id="u_pwd" name="u_pwd" placeholder="建议至少使用两种字符组合"/>
+                            <br/>
+                            <span>建议使用字母、数字和符号两种及以上的组合，6-20个字符</span>
+                        </div>
+                        <div class="form-item">
+                            <label for="u_pwd_confirm"><span>*</span>请确认密码：</label>
+                            <input type="text" id="u_pwd_confirm" name="u_pwd_confirm" placeholder="请再次输入密码"/>
+                            <br/>
+                            <span>请再次输入密码</span>
+                        </div>
+                        <div class="form-item">
+                            <label for="u_phone"><span>*</span>验证手机：</label>
+                            <input type="text" id="u_phone" name="u_phone" placeholder="建议使用常用手机"/>
+                            <br/>
+                            <span><i class="i-def"></i>完成验证后，你可以用该手机登录和找回密码</span>
+                        </div>
+                        <div class="form-item">
+                            <label for="phoneCode"><span>*</span>短信验证码：</label>
+                            <input type="text" id="phoneCode" name="phoneCode" placeholder="请输入手机验证码"/>
+                            <input type="button" value="获取短信验证码" id="phoneCode_btn"/>
+                            <br/>
+                            <span>请输入手机验证码</span>
+                        </div>
+                        <div class="form-item">
+                            <label for="authCode"><span>*</span>验证码：</label>
+                            <input type="text" id="authCode" name="authCode" placeholder="请输入验证码"/>
+                            <img src=""/>
+                            <em>看不清？<a>换一张</a></em>
+                            <br/>
+                            <span></span>
+                        </div>
+                        <div class="form-item">
+                            <label></label>
+                            <div>
+                                <label>
+                                    <input type="checkbox" id="agree" checked/>
+                                    <em>我已阅读并同意<a>《APNA用户手册协议》</a></em>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label></label>
+                            <h6></h6>
+                        </div>
+                        <div class="form-item">
+                            <label></label>
+                            <button id="btn-register" type="button">立即注册</button>
+                        </div>
+                        <div>
+                            <label></label>
+                            <h2></h2>
+                        </div>
+                    </form>
+                </div>
+                <p class="rt">
+                    <img src="img/register_phone_03.jpg"/>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="foot_box_sim"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/common.js"></script>
+    <script src="nv_js/nv_register.js"></script>
+</body>
+</html>

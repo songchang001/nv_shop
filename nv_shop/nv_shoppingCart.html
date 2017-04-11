@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>女装商城_购物车——宋畅作品 仅作技术展示</title>
+    <meta name="description" content="女装商城——nv_shop 个人技术展示，无支付功能。" />
+    <link rel="icon" href="logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/shoppingCart.css"/>
+</head>
+<body ng-controller="parentCtrl">
+    <div id="head_box"></div>
+    <div id="main">
+        <div class="cot">
+            <h3>
+                <a href="index.html" class="rt">返回首页继续购物</a>
+            </h3>
+            <table ng-if="data.code==1">
+                <thead>
+                    <tr>
+                        <td>
+                            <input type="checkbox"/>全选
+                        </td>
+                        <td>
+                            商品信息
+                        </td>
+                        <td>
+                            单价
+                        </td>
+                        <td>
+                            送货至
+                        </td>
+                        <td>
+                            数量
+                        </td>
+                        <td>
+                            运费
+                        </td>
+                        <td>
+                            小计（元）
+                        </td>
+                        <td>
+                            操作
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="list in data.data">
+                        <td>
+                            <input type="checkbox" class="cart_status" ng-checked="list.status==1?true:false" ng-model="cart_status" ng-click="changeStatus(list.did,cart_status)"/>
+                        </td>
+                        <td>
+                            <a href="nv_details.html" class="clearfloat">
+                                <img ng-src={{"img-productList/"+list.pic_s}} />
+                                <p>{{list.pname}}</p>
+                            </a>
+                        </td>
+                        <td>
+                            <span>￥{{list.price}}</span>
+                        </td>
+                        <td>
+                            现货
+                        </td>
+                        <td class="num">
+                            <button ng-click="changeCount(list.did,-1)">-</button><input type="text" ng-model="list.count" /><button ng-click="changeCount(list.did,1)">+</button>
+                        </td>
+                        <td>
+                            <span>￥0.00</span>
+                        </td>
+                        <td class="count">
+                            <span>￥{{list.price*list.count | number:2}}</span>
+                        </td>
+                        <td><a href="" ng-click="del_cart(list.did)">删除</a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <div class="clearfloat" ng-if="data.code==1">
+                <p>
+                    <b class="rt">￥{{total | number:2}}</b>
+                    <span class="rt">商品总金额：</span>
+                </p>
+                <p>
+                    <b class="rt">￥0.00</b>
+                    <span class="rt">优惠金额：</span>
+                </p>
+                <p>
+                    <b class="rt">￥{{total | number:2}}</b>
+                    <span class="rt">运费(以结算页为准)：</span>
+                </p>
+                <div>
+                    商品应付金额：<span>{{total | number:2}}</span><button ng-click="order_add(data)">去结算</button>
+                </div>
+            </div>
+            <h2 ng-if="data.code==0">
+                您的购物车空空如也。。。
+                <a href="index.html">返回</a>
+            </h2>
+        </div>
+    </div>
+    <div id="foot_help_box"></div>
+    <div id="foot_box_sim"></div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/common.js"></script>
+    <script src="nv_js/nv_shoppingCart.js"></script>
+</body>
+</html>

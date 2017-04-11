@@ -1,0 +1,329 @@
+@import "common";
+/*nav部分*/
+    #nav>.cot>.classification>.class_box{display: block;}
+/*banner部分*/
+    #banner{
+        height:@banner-height;
+        position:relative;
+        //轮播部分
+        >div#carousel-example-generic{
+            >ol{
+                >li{
+                    border:1px solid @color-base;
+                    margin-right: 10px;
+                    &.active{
+                        background:@font-a-hover-color;
+                    }
+                }
+            }
+            >div.carousel-inner{
+                >div{
+                    >a{
+                        display: block;
+                        width:100%;
+                        height:465px;
+                    }
+                }
+            }
+            >a.carousel-control{
+                background: transparent;
+                width:5%;
+                &.left{
+                    left: 225px;
+                    @media (min-width: @min-width){
+                        left: 282px;
+                    }
+                }
+                &.right{
+                    right: 225px;
+                    @media (min-width: @min-width){
+                        right: 280px;
+                    }
+                }
+            }
+        }
+        >div.cot{
+            height:465px;
+            width:211px;
+            position: relative;
+            top:-465px;
+            left:395px;
+            @media (min-width: @min-width){
+                left:497px;
+            }
+
+            > div{
+                box-sizing: content-box;
+                width:209px;
+                height:200px;
+                border:1px solid #BFBFBF;
+                background:#fff;
+                position: absolute;
+                right: 0;
+                top:16px;
+                >h3{
+                    height:40px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    padding-left:8px;
+                    border-bottom: 1px solid #BFBFBF;
+                }
+                &.bulletin{
+                    >p>a{
+                        display:block;
+                        line-height: 38px;
+                        padding-left:5px;
+                        font-family: "宋体";
+                        &:hover{
+                            background:#FEE9EB;
+                        }
+                    }
+                    span{
+                        font-size:12px;
+                        margin-right:3px;
+                        padding-right: 18px;
+                        background:url(../img/iconlist-1.png) no-repeat 30px -556px;
+                    }
+                }
+                &.service{
+                    right:0;
+                    top:250px;
+                    >ul{
+                        width:209px;
+                        box-sizing:content-box;
+                        >li{
+                            float:left;
+                            border-right:1px solid #BFBFBF;
+                            border-bottom:1px solid #BFBFBF;
+                            box-sizing: content-box;
+                            &.border_right0{
+                                border-right: 0;
+                            }
+                            a{
+                                display:block;
+                                width:69px;
+                                height:79px;
+                                text-align: center;
+                                box-sizing:content-box;
+                                &:hover{
+                                    background:#FEE9EB;
+                                }
+                                i{
+                                    display: inline-block;
+                                    width:27px;
+                                    height:36px;
+                                    background:url(../img/iconlist-1.png) no-repeat 0 -267px;
+                                    margin: 10px 0 5px 0;
+                                    .tuan(@w:30px,@y:-334px){
+                                        width:@w;
+                                        height:33px;
+                                        background-position: 0 @y;
+                                    }
+                                    &.niuzai{
+                                        .tuan;
+                                    }
+                                    &.lifu{
+                                        .tuan(30px,-403px);
+                                    }
+                                    &.chenshan{
+                                        .tuan(29px,-502px);
+                                    }
+                                    &.neiyi{
+                                        .tuan(31px,-610px);
+                                    }
+                                    &.shuiyi{
+                                        .tuan(37px,-713px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+/*主体-main部分*/
+    //函数-用于1F 2F 3F 5F中的li并列图片
+    .main_li_img(@w:195px,@margin-right:5px,@w_more:235px){
+        float:left;
+        width:@w;
+        margin-right:@margin-right;
+        @media (min-width: @min-width) {
+            width: @w_more;
+        }
+        >a>img{
+            width:100%;
+        }
+    }
+    #main{
+        margin:45px 0 91px 0;
+        overflow:hidden;
+        .cot{
+            //一层，今日推荐
+            .f1_recommend{
+                margin-bottom:45px;
+                overflow: hidden;
+                >ul>li{
+                    .main_li_img;
+                    &:hover{
+                        .prompt;
+                    }
+                }
+            }
+            .f2_love{
+                margin-bottom:71px;
+                overflow:hidden;
+                >h2{
+                    height:50px;
+                    background:url(../img/love.jpg) no-repeat;
+                    border-bottom:2px solid #8CBB3C;
+                    margin-bottom:5px;
+                }
+                >ul>li{
+                    .main_li_img(161.666px,5px,195px);
+                    &:hover{
+                        .prompt;
+                    }
+                }
+            }
+            .f3_class{
+                margin-bottom:50px;
+                >h2{
+                    margin-bottom:27px;
+                    >img{
+                        width:100%;
+                    }
+                }
+                >ul>li{
+                    .main_li_img(244px,8px,294px);
+                    &.last_li{margin:0}
+                    &:hover{
+                        .prompt;
+                    }
+                }
+                >div{
+                    margin-top:18px;
+                    >ul>li{
+                        float:left;
+                        width:250px;
+                        @media (min-width: @min-width) {
+                            width: 300px;
+                        }
+                        >a{
+                            img{
+                                margin-left:5px;
+                            }
+                            div{
+                                margin-left:21px;
+                                >h4{
+                                    font-size:18px;
+                                    font-weight: 400;
+                                    line-height: 40px;
+                                    margin-top:15px;
+                                }
+                                >p{
+                                    font-size:14px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+            .f4_style{
+                margin-bottom: 50px;
+                >h2{
+                    height:38px;
+                    background:url(../img/style.jpg) no-repeat;
+                    border-bottom:2px solid #8CBB3C;
+                }
+                >div{
+                    div{
+                        box-sizing: content-box;
+                        width:155px;
+                        padding:12px 30px;
+                        background:#9EC194;
+                        height:76px;
+                        a{
+                            color:#fff;
+                            font-size: @font-size-large;
+                            margin-right: 3px;
+                            display:inline-block;
+                            line-height: 25px;
+                            &:hover{
+                                color:@font-a-hover-color;
+                            }
+                        }
+                    }
+
+                }
+                >a{
+                    margin:10px 8px 0 8px;
+                    @media (min-width: @min-width) {
+                        margin:10px 11px 0 11px;
+                    }
+                    &:hover{
+                        .prompt;
+                    }
+                }
+                >ul{
+                    width:379px;
+                    @media (min-width: @min-width) {
+                        width:573px;
+                    }
+                    margin-top:10px;
+                    li{
+                        float:left;
+                        margin:0 5px 9px 0;
+                        &:hover{
+                            .prompt;
+                        }
+                        &.hidde{
+                            display:none;
+                            @media (min-width: @min-width) {
+                                display:block;
+                            }
+                        }
+                    }
+                }
+
+            }
+            .f5_pre_sale{
+                >h2{
+                    margin-bottom:42px;
+                    >img{
+                        width:100%;
+                    }
+                }
+                ul>li{
+                    background: #F1F0F0;
+                    margin-bottom:44px;
+                    &:hover{
+                        .prompt;
+                    }
+                    .main_li_img(195px,5px,235px);
+                    >a>div{
+                        >p{
+                            color:#403f3f;
+                            font-size:@font-size-large;
+                            line-height:23px;
+                            padding:0 15px;
+                            margin-top:5px;
+                            &:hover{
+                                color:@font-a-hover-color;
+                            }
+                        }
+                        >span{
+                            display:inline-block;
+                            color:#e00;
+                            font-size: @font-size-large-more;
+                            padding:10px 0 9px 15px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+

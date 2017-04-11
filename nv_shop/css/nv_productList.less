@@ -1,0 +1,236 @@
+@import "common";
+
+.p_list_curr{
+    >ul{
+        padding: 10px 0;
+        overflow: hidden;
+        >li{
+            float:left;
+            width:210px;
+            margin:0 10px 35px 10px;
+            @media (min-width: @min-width){
+                margin:0 5px 35px 5px;
+            }
+            padding:12px 7px;
+            box-shadow: 0 0 8px 0 #323232;
+            border:3px solid transparent;
+            &:hover{
+                border-color:@color-base;
+                box-shadow: 0 0 8px 0 #D03A7B;
+            }
+            >a{
+                >p{
+                    margin:12px 0 16px 0;
+                }
+                >h3{
+                    margin-bottom:16px;
+                    font-weight: 400;
+                    color:#f50000;
+                    font-size:16px;
+                }
+                >h4{
+                    font-weight: 400;
+                    font-size: 14px;
+                    font-family: "宋体";
+                    margin-bottom: 22px;
+                    width:100%;
+                    height:16px;
+                    line-height:16px;
+                    overflow:hidden;
+                }
+            }
+            >div{
+                >span{
+                    display:inline-block;
+                    margin-right:12px;
+                    color:#333;
+                    >span{
+                        color:#A86A49;
+                    }
+                    >em{
+                        font-style: normal;
+                        color:#0099FE;
+                    }
+                }
+                >a{
+                    width:20px;
+                    height:20px;
+                    background:url(../img/iconlist-2.png) no-repeat 0 -320px;
+                }
+            }
+        }
+    }
+}
+
+
+#main{
+    overflow: hidden;
+    margin-bottom: 80px;
+    >.cot{
+        >.selector{
+            margin-bottom:15px;
+            .sel_currency{
+                width:996px;
+                @media (min-width: @min-width){
+                    width:1196px;
+                }
+                border:2px solid #D1CCC7;
+                margin:19px 0;
+                overflow: hidden;
+                height: 71px;
+                >h3{
+                    width:208px;
+                    height:100%;
+                    font-weight: 400;
+                    font-size:16px;
+                    background:#E9E7E7;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height:65px;
+                }
+                >div{
+                    width:788px;
+                    >ul{
+                        padding-left:20px;
+                        overflow: hidden;
+                        >li{
+                            float:left;
+                            font-family:"宋体";
+                            margin-right:42px;
+                            line-height: 34px;
+                            cursor: pointer;
+                            &.active{
+                                color:@color-base;
+                            }
+                        }
+                    }
+                }
+            }
+            >.sel_1,.sel_2,.sel_3{
+                .sel_currency;
+            }
+            >.sel_3{
+                height:auto;
+                margin-bottom:42px;
+                >.sel_3_1{
+                    .sel_currency;
+                    border:0;
+                    margin:0;
+                    border-bottom:1px solid #D1CCC7;
+                    height:41px;
+                    >h3{
+                        line-height:41px;
+                    }
+                    div>ul>li{line-height:41px;}
+                }
+                >.sel_3_2{
+                    .sel_currency;
+                    border:0;
+                    margin:0;
+                    border-bottom:1px solid #D1CCC7;
+                    height:35px;
+                    >h3{
+                        line-height:35px;
+                    }
+                    div>ul>li{line-height:35px;}
+                }
+            }
+        }
+        >.product_list{
+            padding-bottom: 30px;
+            >.p_filter{
+                margin-bottom: 27px;
+                margin-left: 5px;
+                >div{margin-right:17px;}
+                >.sort{
+                    >ul{
+                        >li{
+                            float:left;
+                            width:44px;
+                            height:28px;
+                            line-height: 28px;
+                            text-align: center;
+                            border:1px solid #A7A7A7;
+                            margin-left:-1px;
+                            cursor: pointer;
+                            &.active{
+                                border-color:@color-base;
+                                background: @color-base;
+                                color:#fff;
+                            }
+                        }
+                    }
+                }
+                >.address{
+                    width:104px;
+                    height:28px;
+                    line-height: 28px;
+                    text-align: center;
+                    border:1px solid #A7A7A7;
+                    cursor: pointer;
+
+                }
+                >.feature{
+                    width:264px;
+                    height:28px;
+                    line-height: 28px;
+                    border:1px solid #A7A7A7;
+                    >label{
+                        display:inline-block;
+                        margin-left: 20px;
+                        >input{
+                            vertical-align: middle;
+                        }
+                    }
+                }
+
+            }
+            >.p_list{
+                .p_list_curr;
+            }
+            >.page{
+                text-align:center;
+                height:20px;
+                line-height:20px;
+                vertical-align: middle;
+                font-size: 14px;
+                >a{
+                    display:inline-block;
+                    border:1px solid #A7A7A7;
+                    margin-left:-1px;
+                    padding: 8px 10px;
+                    cursor: pointer;
+                    &.disabled{
+                        opacity: 0.5;
+                        cursor: default;
+                        color:#333;
+                        background: #fff;
+                        cursor: not-allowed;
+                    }
+                    &.curr{
+                        background:#F1F0F0;
+                    }
+                }
+                >input{
+                    width:33px;
+                    height:18px;
+                    text-align: center;
+                    border:1px solid #7A7A7A;
+                    padding: 0;
+                }
+                >button{
+                    width:44px;
+                    height:22px;
+                    background:#fff;
+                    text-align: center;
+                    border: 1px solid #A7A7A7;
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+}
+
+
+
